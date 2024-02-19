@@ -1,7 +1,6 @@
 # abEx
 
-abEx is an API that enables to conduct A/B experiments (see https://hbr.org/2017/06/a-refresher-on-ab-testing for information on what an A/B experiment is). 
-Users can create experiments, randomly allocate users to either side, force users to either side of the experiment, adjust traffic rates, get information about the experiment and current allocations, and end experiments based on either sample size, duration in days, or by force.
+abEx is an API that enables to conduct [A/B experiments](https://hbr.org/2017/06/a-refresher-on-ab-testing). Users can create experiments, randomly allocate users to either side, force users to either side of the experiment, adjust traffic rates, get information about the experiment and current allocations, and end experiments based on either sample size, duration in days, or by force.
 
 ## Basic Use
 1. [Create](#create-experiment) your experiment
@@ -43,7 +42,7 @@ At any point after creation, you can also get the status of your experiment and/
 | Param | Type | Required | Accepted Values | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | `experimentName` | string | Required | Any existing experiment | Name of the experiment you wish to start |
-| `experimentId` | int | Required | Any existing experiment | ID of your experiment, provided during creation (/create) |
+| `experimentId` | int | Required | Any existing experiment | ID of your experiment, provided during creation ([/create](#create-experiment)) |
 | `sampleSize` | int | Optional | Up to 1,000,000 (minimum value is 2) | Total number of allocations to either the A or B side of your experiment you wish to capture before the experiment stops. Experiment will stop automatically once this number has been reached (sum of allocations to A + B). |
 | `durationDays` | int | Optional | Up to 90 (minimum value is 1) | Duration in days you wish to run the experiment. Experiment will automatically stop exactly that many days after starting (i.e. if you start at 11:59pm on January 1 and run for 2 days, it will stop at 11:59pm on January 3) |
 | `trafficRate` | int | Optional | 1-100 | Defaults to 100. Defines the % of users who are allocated to either A or B / unallocated users. For example, if you set the traffic rate to 50, this means that 50% of the total users will be allocated to either A or B, while the remaining 50% will be unallocated (U). |
