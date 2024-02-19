@@ -1,6 +1,7 @@
 # abEx
 
-abEx is an API that enables to conduct A/B experiments (see https://hbr.org/2017/06/a-refresher-on-ab-testing for information on what an A/B experiment is). Users can create experiments, randomly allocate users to either side, force users to either side of the experiment, adjust traffic rates, get information about the experiment and current allocations, and end experiments based on either sample size, duration in days, or by force.
+abEx is an API that enables to conduct A/B experiments (see https://hbr.org/2017/06/a-refresher-on-ab-testing for information on what an A/B experiment is). 
+Users can create experiments, randomly allocate users to either side, force users to either side of the experiment, adjust traffic rates, get information about the experiment and current allocations, and end experiments based on either sample size, duration in days, or by force.
 
 ## Basic Use
 1. [Create](#create-experiment) your experiment
