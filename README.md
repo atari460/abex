@@ -47,7 +47,9 @@ At any point after creation, you can also get the status of your experiment and/
 | `durationDays` | int | Optional | Up to 90 (minimum value is 1) | Duration in days you wish to run the experiment. Experiment will automatically stop exactly that many days after starting (i.e. if you start at 11:59pm on January 1 and run for 2 days, it will stop at 11:59pm on January 3) |
 | `trafficRate` | int | Optional | 1-100 | Defaults to 100. Defines the % of users who are allocated to either A or B / unallocated users. For example, if you set the traffic rate to 50, this means that 50% of the total users will be allocated to either A or B, while the remaining 50% will be unallocated (U). |
 
-If both sampleSize and durationDays are not provided, the experiment will default to run for 14 days with no limit to sample size. If only durationDays is provided, there will be no limit to sampleSize and visa versa.
+- If both sampleSize and durationDays are not provided, the experiment will default to run for 14 days with no limit to sample size
+- If only durationDays is provided, there will be no limit to sampleSize.
+- If only sampleSize is provided, there is no end date set. However, the system will force an experiment to stop if it has been running longer than 6 months.
 ```json
 {
     "experimentName":"MyFirstExperiment",
